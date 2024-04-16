@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Special Terrain
+    uniqueID: 2512982853
+    locked: 0
+  - name: Visual Effects
+    uniqueID: 3101522635
+    locked: 0
+  - name: Characters
+    uniqueID: 1986402795
+    locked: 0

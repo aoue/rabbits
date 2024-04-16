@@ -1,0 +1,17 @@
+to add:
+
+-fox circle:
+	-currently doing math to check if rabbit enters. Could switch this to collision.
+
+-bush that the rabbit can move into to enter hidden state
+	-collision: when the rabbit enters the burrow, set its State to 'hidden'
+
+-the hole. anyone who moves into the hole can no longer move.
+	-if the fox moves into the hole then play a party sound
+
+-navmesh for pathfinding
+	-this will change some things. Namely, where we just use vector.moveTowards() we will switch this out
+	I hope the change is that simple.
+
+-multiple rabbits and switching between them with key presses 1/2/3
+
