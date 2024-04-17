@@ -15,6 +15,14 @@ public class Fox : MonoBehaviour
     private float movingTime;  // how long it will keep chasing the current target
     private Vector3 dest;  // the target it is currently chasing
     private Rabbit targetRabbit;  // the rabbit being currently chased.
+    private UnityEngine.AI.NavMeshAgent agent;
+
+    void Start()
+    {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,7 +45,8 @@ public class Fox : MonoBehaviour
             // otherwise, keep moving towards the target
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, dest, speed * Time.deltaTime);
+                // transform.position = Vector3.MoveTowards(transform.position, dest, speed * Time.deltaTime);
+                agent.SetDestination(dest);
                 movingTime -= Time.deltaTime;
             }
         }

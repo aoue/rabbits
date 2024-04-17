@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Rabbit : MonoBehaviour
 {
@@ -14,8 +15,16 @@ public class Rabbit : MonoBehaviour
     private bool isHidden = false;  // True when hiding in a grove
     private bool isCaught = false;  // True when caught by the fox
     private bool isSelected = false;  // True when the player is controlling this rabbit in particular
+    private NavMeshAgent agent;
 
     [SerializeField] CharacterManager characters;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,7 +43,8 @@ public class Rabbit : MonoBehaviour
         // move the rabbit towards the target position
         if (movingTime > 0.02f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, dest, speed * Time.deltaTime);
+            // transform.position = Vector3.MoveTowards(transform.position, dest, speed * Time.deltaTime);
+            agent.SetDestination(dest);
             movingTime -= Time.deltaTime;
             selectionRenderer.color = new Color(1f, 1f, 0f, 1f);  // Yellow when moving
         }
@@ -42,6 +52,7 @@ public class Rabbit : MonoBehaviour
         {
             selectionRenderer.color = new Color(1f, 1f, 1f, 1f);  // color back to white when stationary
         }
+        
     }
 
     // Setters
