@@ -44,9 +44,18 @@ TagManager:
   - name: Special Terrain
     uniqueID: 2512982853
     locked: 0
-  - name: Visual Effects
+  - name: Predator Circle
     uniqueID: 3101522635
+    locked: 0
+  - name: Bush Circle
+    uniqueID: 3063459885
+    locked: 0
+  - name: Selection Icon
+    uniqueID: 1904893541
     locked: 0
   - name: Characters
     uniqueID: 1986402795
+    locked: 0
+  - name: Character ID
+    uniqueID: 3982135979
     locked: 0
